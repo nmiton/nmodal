@@ -1,23 +1,26 @@
 {
-  "name": "nmodal",
+  "name": "@nmiton/modal",
   "version": "1.0.0",
-  "description": "Modal By nmiton",
+  "description": "A simple, customizable modal component for React.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src --out-dir dist --copy-files"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+  "keywords": ["modal", "react", "component", "ui"],
+  "author": "nmiton",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.25.9",
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.25.9"
-  }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
 }

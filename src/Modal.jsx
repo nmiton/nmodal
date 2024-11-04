@@ -1,40 +1,31 @@
-import { useEffect, useRef, useState } from "react";
+import React from "react";
 import "./modal.css";
+
 /**
- * Function to render a modal
- * @param {JSX.Element} children - Children of modal
- * @param {Function} closeModal - Function to close modal
- * @param {String} title - Title of modal
- * @param {String} className - Class of modal
- * @param {String} id - ID of modal
- * @param {Boolean} sidebar - Flag to determine if the modal is a sidebar
- * @returns {JSX.Element}
+ * Renders a modal component.
+ * @param {Object} props - Component props.
+ * @param {JSX.Element} props.children - Content to display inside the modal.
+ * @param {Function} props.closeModal - Function to close the modal.
+ * @param {String} [props.title=""] - Title of the modal.
+ * @param {String} [props.className=""] - Additional classes for modal styling.
+ * @param {String} [props.id] - Optional ID for the modal.
+ * @returns {JSX.Element} The modal component.
  */
-export default function Modal({ children, closeModal, title, className, id, sidebar = false }) {
-	const [isOpen, setIsOpen] = useState(false);
-	const modalRef = useRef(null);
-	const modalClassName = `${sidebar ? "modal-sidebar" : "modal"} ${className || ""}`;
+export default function Modal({ children, closeModal, title = null, className = "", id = undefined }) {
+	const modalClassName = `modal ${className}`;
 
 	/**
-	 * UEF to update isOpen
-	 */
-	useEffect(() => {
-		setIsOpen(true);
-	}, []);
-
-	/**
-	 * Function to close modal
+	 * Handles closing the modal.
 	 */
 	const handleCloseModal = () => {
-		setIsOpen(false);
-		closeModal && closeModal();
+		if (closeModal) closeModal();
 	};
 
 	return (
-		<div className={`overlay-modal ${isOpen ? "visible" : "hidden"}`}>
-			<div className={modalClassName} id={id} ref={modalRef}>
+		<div className="overlay-modal visible" onClick={handleCloseModal}>
+			<div className={modalClassName} id={id} onClick={(e) => e.stopPropagation()}>
 				<div className="modal-header">
-					{title ? <h2>{title}</h2> : <span className="blank"></span>}
+					{title && <h2>{title}</h2>}
 					<button onClick={handleCloseModal} type="button" className="btn-close">
 						&times;
 					</button>
@@ -44,3 +35,10 @@ export default function Modal({ children, closeModal, title, className, id, side
 		</div>
 	);
 }
+
+// Définir les valeurs par défaut dans defaultProps (si pas de TypeScript)
+Modal.defaultProps = {
+	title: null,
+	className: "",
+	id: undefined,
+};
