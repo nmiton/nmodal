@@ -18,10 +18,6 @@ import Modal from "@nmiton/modal";
 
 ## Usage
 
-How to use this modal ?
-
-# Basic Example
-
 ```js
 import React, { useState } from 'react';
 import Modal from "@nmiton/modal";
