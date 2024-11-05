@@ -13,14 +13,14 @@ npm i @nmiton/modal
 Import the Modal component:
 
 ```js
-import Modal from "@nmiton/modal";
+import { Modal } from "@nmiton/modal";
 ```
 
 ## Usage
 
 ```js
 import React, { useState } from 'react';
-import Modal from "@nmiton/modal";
+import { Modal } from "@nmiton/modal";
 
 
 const App = () => {
