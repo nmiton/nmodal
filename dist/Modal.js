@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = Modal;
+exports["default"] = void 0;
 var _react = _interopRequireDefault(require("react"));
 require("./modal.css");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
@@ -17,7 +17,7 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default":
  * @param {String} [props.id] - Optional ID for the modal.
  * @returns {JSX.Element} The modal component.
  */
-function Modal(_ref) {
+var Modal = function Modal(_ref) {
   var children = _ref.children,
     closeModal = _ref.closeModal,
     _ref$title = _ref.title,
@@ -52,11 +52,10 @@ function Modal(_ref) {
   }, "\xD7")), /*#__PURE__*/_react["default"].createElement("div", {
     className: "modal-content"
   }, children)));
-}
-
-// Définir les valeurs par défaut dans defaultProps (si pas de TypeScript)
+};
 Modal.defaultProps = {
   title: null,
   className: "",
   id: undefined
 };
+var _default = exports["default"] = Modal;
