@@ -11,7 +11,7 @@ import "./modal.css";
  * @param {String} [props.id] - Optional ID for the modal.
  * @returns {JSX.Element} The modal component.
  */
-export default function Modal({ children, closeModal, title = null, className = "", id = undefined }) {
+const Modal = ({ children, closeModal, title = null, className = "", id = undefined }) => {
 	const modalClassName = `modal ${className}`;
 
 	/**
@@ -34,11 +34,12 @@ export default function Modal({ children, closeModal, title = null, className = 
 			</div>
 		</div>
 	);
-}
+};
 
-// Définir les valeurs par défaut dans defaultProps (si pas de TypeScript)
 Modal.defaultProps = {
 	title: null,
 	className: "",
 	id: undefined,
 };
+
+export default Modal;
