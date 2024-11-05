@@ -10,8 +10,7 @@ Object.defineProperty(exports, "Modal", {
 	},
 });
 var _modal = _interopRequireDefault(require("./modal"));
+
 function _interopRequireDefault(e) {
 	return e && e.__esModule ? e : { default: e };
 }
-
-exports.Modal = _modal.default;
