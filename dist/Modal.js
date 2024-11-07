@@ -24,10 +24,7 @@ var Modal = function Modal(_ref) {
     title = _ref$title === void 0 ? null : _ref$title,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? "" : _ref$className,
-    _ref$id = _ref.id,
-    id = _ref$id === void 0 ? undefined : _ref$id;
-  var modalClassName = "modal ".concat(className);
-
+    id = _ref.id;
   /**
    * Handles closing the modal.
    */
@@ -38,8 +35,8 @@ var Modal = function Modal(_ref) {
     className: "modal-overlay",
     onClick: handleCloseModal
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: modalClassName,
-    id: id,
+    className: "modal ".concat(className),
+    id: id || undefined,
     onClick: function onClick(e) {
       return e.stopPropagation();
     }
@@ -52,10 +49,5 @@ var Modal = function Modal(_ref) {
   }, "\xD7")), /*#__PURE__*/_react["default"].createElement("div", {
     className: "modal-content"
   }, children)));
-};
-Modal.defaultProps = {
-  title: null,
-  className: "",
-  id: undefined
 };
 var _default = exports["default"] = Modal;
