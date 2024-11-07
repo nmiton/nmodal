@@ -30,11 +30,11 @@ const App = () => {
     <div>
       <button onClick={() => setShowModal(true)}>Open Modal</button>
       {showModal && (
-				<Modal id="My modal" closeModal={() => setShowModal(false)} title={<h2>Modal Title</h2>}>
+	<Modal id="My modal" closeModal={() => setShowModal(false)} title={<h2>Modal Title</h2>}>
           <h3>This is a Modal</h3>
           <p>Here is some modal content!</p>
-				</Modal>
-			)}
+	</Modal>
+      )}
     </div>
   );
 };
