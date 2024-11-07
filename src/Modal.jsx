@@ -1,5 +1,6 @@
 import React from "react";
 import "./modal.css";
+
 /**
  * Renders a modal component.
  * @param {Object} props - Component props.
@@ -33,12 +34,6 @@ const Modal = ({ children, closeModal, title = null, className = "", id = undefi
 			</div>
 		</div>
 	);
-};
-
-Modal.defaultProps = {
-	title: null,
-	className: "",
-	id: undefined,
 };
 
 export default Modal;
