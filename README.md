@@ -49,7 +49,7 @@ The Modal component accepts the following props:
 | Prop         | Type              | Required | Description                                    |
 | ------------ | ----------------- | -------- | ---------------------------------------------- |
 | `closeModal` | `() => void`      | Yes      | Callback function to handle closing the modal  |
-| `children`   | `React.ReactNode` | No       | The content to be displayed inside the modal   |
+| `children`   | `React.ReactNode` | Yes       | The content to be displayed inside the modal   |
 | `id`         | `String`          | No       | Modal Identifier                               |
 | `className`  | `String`          | No       | Modal className                                |
 | `title`      | `React.ReactNode` | No       | The modal title content                        |
