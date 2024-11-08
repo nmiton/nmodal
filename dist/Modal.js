@@ -18,19 +18,23 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default":
  * @returns {JSX.Element} The modal component.
  */
 var Modal = function Modal(_ref) {
-  var children = _ref.children,
-    closeModal = _ref.closeModal,
+  var _ref$children = _ref.children,
+    children = _ref$children === void 0 ? null : _ref$children,
+    _ref$closeModal = _ref.closeModal,
+    closeModal = _ref$closeModal === void 0 ? null : _ref$closeModal,
     _ref$title = _ref.title,
     title = _ref$title === void 0 ? null : _ref$title,
     _ref$className = _ref.className,
     className = _ref$className === void 0 ? "" : _ref$className,
-    id = _ref.id;
+    _ref$id = _ref.id,
+    id = _ref$id === void 0 ? undefined : _ref$id;
   /**
    * Handles closing the modal.
    */
   var handleCloseModal = function handleCloseModal() {
     if (closeModal) closeModal();
   };
+  if (!children) return null;
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: "modal-overlay",
     onClick: handleCloseModal

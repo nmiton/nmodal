@@ -11,13 +11,15 @@ import "./modal.css";
  * @param {String} [props.id] - Optional ID for the modal.
  * @returns {JSX.Element} The modal component.
  */
-const Modal = ({ children, closeModal, title = null, className = "", id }) => {
+const Modal = ({ children = null, closeModal = null, title = null, className = "", id = undefined }) => {
 	/**
 	 * Handles closing the modal.
 	 */
 	const handleCloseModal = () => {
 		if (closeModal) closeModal();
 	};
+
+	if (!children) return null;
 
 	return (
 		<div className="modal-overlay" onClick={handleCloseModal}>
